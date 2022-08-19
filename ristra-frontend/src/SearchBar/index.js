@@ -1,6 +1,7 @@
 import { Button, Form } from 'react-bootstrap';
 import Data from '../data.json';
 import { useState, useEffect } from 'react'
+import Restaurant from '../Restaurant';
 
 
 export default function SearchBar (){
@@ -20,17 +21,17 @@ export default function SearchBar (){
     )
   },[query]);
 
-  console.log(restaurants)
-
   return (
     <div>
       <input placeholder="Search Restaurants" onChange={event => setQuery(event.target.value)} />
       {restaurants.map((restaurant, index) => {
         return (
-          <div key={index}>
-            <p key={index}>{restaurant.name}</p>
-            <p>{restaurant.description}</p>
-          </div>
+          <Restaurant 
+            key={index} 
+            name={restaurant.name} 
+            description={restaurant.description}
+            reviews={restaurant.reviews} 
+          />
         )
         })
       }

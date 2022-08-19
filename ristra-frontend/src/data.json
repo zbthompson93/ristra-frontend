@@ -1,0 +1,38 @@
+{
+    "restaurants": [
+        {
+            "id": 1,
+            "name":"Italiano",
+            "type": "italian",
+            "location": "Albuquerque, NM",
+            "description": "This is an italian restaurant in downtown Abq",
+            "reviews": [
+                {
+                    "rating": "4",
+                    "comment": "Good food"
+                },
+                {
+                    "rating": "3",
+                    "comment": "Okay food"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name":"Burritos NM",
+            "type": "new mexican",
+            "location": "Albuquerque, NM",
+            "description": "Best burritos in Abq",
+            "reviews": [
+                {
+                    "rating": "5",
+                    "comment": "Delicious and spicy burritos"
+                },
+                {
+                    "rating": "4",
+                    "comment": "Yum, yum, yum!"
+                }
+            ]
+        }
+    ]
+}

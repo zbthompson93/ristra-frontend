@@ -1,7 +1,8 @@
 import Data from '../data.json';
 import { useState, useEffect } from 'react'
 import Review from '../Review'
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
+import NavBar from '../NavBar';
 
 
 function Restaurant() {
@@ -10,6 +11,8 @@ function Restaurant() {
     const [reviews, setReviews] = useState([]);
     const [rating, setRating] = useState(0);
     const [restaurantId, setRestaurantId] = useState(0)
+    const location = useLocation();
+    const [query, setQuery] = useState(location.state.query);
 
     let params = useParams();
 
@@ -48,22 +51,24 @@ function Restaurant() {
         <div>
             { name && restaurantId > 0 ? (
                 <div>
-                <h1>Name: {name}</h1>
-                <p>description: {description}</p>
-                <p>rating: {rating}</p>
-                <p>{params.restaurantId}</p>
+                    <NavBar query={query}/>
 
-                {reviews.map((review, index) => {
-                    return (
-                        <Review 
-                            key={index} 
-                            user={review.user} 
-                            rating={review.rating}
-                            comment={review.comment} 
-                        />
-                    )
-                })
-            }
+                    <h1>Name: {name}</h1>
+                    <p>description: {description}</p>
+                    <p>rating: {rating}</p>
+                    <p>{params.restaurantId}</p>
+
+                    {reviews.map((review, index) => {
+                        return (
+                            <Review 
+                                key={index} 
+                                user={review.user} 
+                                rating={review.rating}
+                                comment={review.comment} 
+                            />
+                        )
+                    })
+                }
             </div>
             ) : null }
 

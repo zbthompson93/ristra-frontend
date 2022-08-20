@@ -8,6 +8,7 @@ function RestaurantResult(props) {
     const [reviews, setReviews] = useState(props.reviews);
     const [rating, setRating] = useState(0);
     const [id, setId] = useState(props.id);
+    const [query, setQuery] = useState(props.query);
 
     let navigate = useNavigate();
     
@@ -29,7 +30,7 @@ function RestaurantResult(props) {
     },[props.name]);
 
     return(
-        <div onClick={() => navigate(`/restaurant/${props.id}`)}>
+        <div onClick={() => navigate(`/restaurant/${props.id}`, {state:{query:props.query}})}>
             <h1>Name: {name}</h1>
             <p>description: {description}</p>
             <p>rating: {rating}</p>

@@ -2,11 +2,15 @@ import { Button, Form } from 'react-bootstrap';
 import Data from '../data.json';
 import { useState, useEffect } from 'react'
 import RestaurantResult from '../RestaurantResult';
+import { useLocation } from 'react-router-dom'; 
 
 
-export default function SearchBar (){
-  const [query, setQuery] = useState("");
+export default function SearchBar(){
+  const location = useLocation();
+  const [query, setQuery] = useState(location.state.query);
   const [restaurants, setRestaurants] = useState([]);
+
+  console.log(location.state.query)
 
   useEffect(() => {
     setRestaurants(
@@ -23,7 +27,7 @@ export default function SearchBar (){
 
   return (
     <div>
-      <input placeholder="Search Restaurants" onChange={event => setQuery(event.target.value)} />
+      <input placeholder="Search Restaurants" onChange={event => setQuery(event.target.value)} value={query} />
       {restaurants.map((restaurant, index) => {
         return (
           <RestaurantResult 
@@ -32,6 +36,7 @@ export default function SearchBar (){
             name={restaurant.name} 
             description={restaurant.description}
             reviews={restaurant.reviews} 
+            query={query}
           />
         )
         })

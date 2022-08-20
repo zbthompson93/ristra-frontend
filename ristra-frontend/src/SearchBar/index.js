@@ -1,7 +1,6 @@
 import { Button, Form } from 'react-bootstrap';
 import Data from '../data.json';
 import { useState, useEffect } from 'react'
-import Restaurant from '../Restaurant';
 import RestaurantResult from '../RestaurantResult';
 
 

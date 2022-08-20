@@ -29,7 +29,7 @@ function RestaurantResult(props) {
     },[props.name]);
 
     return(
-        <div onClick={() =>navigate(`/restaurant/${props.id}`)}>
+        <div onClick={() => navigate(`/restaurant/${props.id}`)}>
             <h1>Name: {name}</h1>
             <p>description: {description}</p>
             <p>rating: {rating}</p>

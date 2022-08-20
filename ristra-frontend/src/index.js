@@ -17,8 +17,8 @@ root.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<SearchBar />} />
-          <Route path="restaurant/:restaurantId" element={<Restaurant />} />
         </Route>
+        <Route path="/restaurant/:restaurantId" element={<Restaurant />} />
       </Routes>
     </BrowserRouter>
 );

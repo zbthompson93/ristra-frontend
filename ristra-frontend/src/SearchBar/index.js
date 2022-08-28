@@ -7,12 +7,17 @@ import { useLocation } from 'react-router-dom';
 
 export default function SearchBar(){
   const location = useLocation();
-  const [query, setQuery] = useState(location.state.query);
+  const [query, setQuery] = useState("")
   const [restaurants, setRestaurants] = useState([]);
 
-  console.log(location.state.query)
+  useEffect(() => {
+    if(location.state){
+      setQuery(location.state.query);
+    }
+  },[])
 
   useEffect(() => {
+
     setRestaurants(
       Data.restaurants.filter(restaurant => {
         if (query === '') {

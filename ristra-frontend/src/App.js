@@ -1,13 +1,18 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import SearchBar from './SearchBar'
-//import Restaurant from './Restaurant';
+//import { useLocation } from 'react-router-dom'; 
 
 
 function App() {
+  // const location = useLocation();
+
+  // if(!location.state){
+  //   location.state.query = ""
+  // }
+
   return (
     <div>
       <SearchBar />
-      {/* <Restaurant /> */}
     </div>
   );
 }

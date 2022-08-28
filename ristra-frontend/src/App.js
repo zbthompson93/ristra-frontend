@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import SearchBar from './SearchBar'
-//import { useLocation } from 'react-router-dom'; 
+import './App.css'
 
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
   // }
 
   return (
-    <div>
+    <div className="App">
       <SearchBar />
     </div>
   );

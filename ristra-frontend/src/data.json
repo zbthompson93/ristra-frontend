@@ -37,6 +37,44 @@
                     "comment": "Yum, yum, yum!"
                 }
             ]
+        },
+        {
+            "id": 3,
+            "name":"Dion's",
+            "type": "pizza",
+            "location": "Albuquerque, NM",
+            "description": "PIZZA!!!",
+            "reviews": [
+                {
+                    "user": "Tony Stark",
+                    "rating": 5,
+                    "comment": "Best damn pizza"
+                },
+                {
+                    "user": "Mozart",
+                    "rating": 3,
+                    "comment": "alright"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name":"Casa de Benevidez",
+            "type": "new mexican",
+            "location": "Albuquerque, NM",
+            "description": "Authentic NM Food",
+            "reviews": [
+                {
+                    "user": "Out of towner",
+                    "rating": 3,
+                    "comment": "Spicy AF"
+                },
+                {
+                    "user": "In Towner",
+                    "rating": 5,
+                    "comment": "Dope AF"
+                }
+            ]
         }
     ]
 }

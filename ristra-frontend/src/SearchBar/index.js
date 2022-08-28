@@ -31,8 +31,8 @@ export default function SearchBar(){
   },[query]);
 
   return (
-    <div>
-      <input placeholder="Search Restaurants" onChange={event => setQuery(event.target.value)} value={query} />
+    <div className='search-bar'>
+      <input className='search-box' placeholder="Search Restaurants" onChange={event => setQuery(event.target.value)} value={query} />
       {restaurants.map((restaurant, index) => {
         return (
           <RestaurantResult 

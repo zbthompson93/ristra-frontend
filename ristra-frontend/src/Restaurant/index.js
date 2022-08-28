@@ -48,7 +48,7 @@ function Restaurant() {
     },[restaurantId, name]);
 
     return(
-        <div>
+        <div className='App'>
             { name && restaurantId > 0 ? (
                 <div>
                     <NavBar query={query}/>

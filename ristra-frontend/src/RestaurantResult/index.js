@@ -30,10 +30,11 @@ function RestaurantResult(props) {
     },[props.name]);
 
     return(
-        <div onClick={() => navigate(`/restaurant/${props.id}`, {state:{query:props.query}})}>
+        <div className='restaurant-result' onClick={() => navigate(`/restaurant/${props.id}`, {state:{query:props.query}})}>
             <h1>Name: {name}</h1>
             <p>description: {description}</p>
             <p>rating: {rating}</p>
+            <hr />
         </div>
     )
     

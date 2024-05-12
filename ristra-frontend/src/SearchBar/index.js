@@ -3,6 +3,9 @@ import Data from '../data.json';
 import { useState, useEffect } from 'react'
 import RestaurantResult from '../RestaurantResult';
 import { useLocation } from 'react-router-dom'; 
+import TextField from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
+import SearchIcon from '@mui/icons-material/Search';
 
 
 export default function SearchBar(){
@@ -32,7 +35,15 @@ export default function SearchBar(){
 
   return (
     <div className='search-bar'>
-      <input className='search-box' placeholder="Search Restaurants" onChange={event => setQuery(event.target.value)} value={query} />
+      <TextField 
+        className='search-box' 
+        placeholder="Search Restaurants" 
+        onChange={event => setQuery(event.target.value)} 
+        value={query} 
+        InputProps={{
+          startAdornment: <InputAdornment position="start"><SearchIcon /></InputAdornment>,
+        }}
+      />
       {restaurants.map((restaurant, index) => {
         return (
           <RestaurantResult 

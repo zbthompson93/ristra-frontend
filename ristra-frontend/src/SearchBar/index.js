@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
+import List from '@mui/material/List';
 
 
 export default function SearchBar(){
@@ -44,6 +45,7 @@ export default function SearchBar(){
           startAdornment: <InputAdornment position="start"><SearchIcon /></InputAdornment>,
         }}
       />
+      <List>
       {restaurants.map((restaurant, index) => {
         return (
           <RestaurantResult 
@@ -55,8 +57,9 @@ export default function SearchBar(){
             query={query}
           />
         )
-        })
+        }) 
       }
+      </List>
     </div>
   )
 }

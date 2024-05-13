@@ -1,5 +1,12 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import Divider from '@mui/material/Divider';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import Avatar from '@mui/material/Avatar';
+import RestaurantIcon from '@mui/icons-material/Restaurant';
+import Chip from '@mui/material/Chip';
 
 
 function RestaurantResult(props) {
@@ -30,12 +37,23 @@ function RestaurantResult(props) {
     },[props.name]);
 
     return(
-        <div className='restaurant-result' onClick={() => navigate(`/restaurant/${props.id}`, {state:{query:props.query}})}>
-            <h1>Name: {name}</h1>
-            <p>description: {description}</p>
-            <p>rating: {rating}</p>
-            <hr />
-        </div>
+        <>
+        <ListItem 
+            className='restaurant-result' 
+            secondaryAction={
+                <Chip label={`${rating}/5`} />
+            }
+            onClick={() => navigate(`/restaurant/${props.id}`, {state:{query:props.query}})}
+        >
+            <ListItemAvatar>
+                <Avatar>
+                    <RestaurantIcon />
+                </Avatar>
+            </ListItemAvatar>
+            <ListItemText primary={name} secondary={description} />
+        </ListItem>
+        <Divider component="li" />
+        </>
     )
     
 }

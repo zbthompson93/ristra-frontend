@@ -7,7 +7,7 @@ import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
 import List from '@mui/material/List';
-
+import NavBar from '../NavBar';
 
 export default function SearchBar(){
   const location = useLocation();
@@ -35,6 +35,7 @@ export default function SearchBar(){
   },[query]);
 
   return (
+    <><NavBar query={query} name={"Ristra"} home={true}/>
     <div className='search-bar'>
       <TextField 
         className='search-box' 
@@ -61,5 +62,6 @@ export default function SearchBar(){
       }
       </List>
     </div>
+    </>
   )
 }

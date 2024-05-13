@@ -59,7 +59,7 @@ function Restaurant() {
         <div className='App'>
             { name && restaurantId > 0 ? (
                 <div>
-                    <NavBar query={query} name={name}/>
+                    <NavBar query={query} name={name} home={false}/>
 
                     <Card>
                         <CardHeader

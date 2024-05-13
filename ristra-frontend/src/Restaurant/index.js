@@ -51,7 +51,7 @@ function Restaurant() {
         <div className='App'>
             { name && restaurantId > 0 ? (
                 <div>
-                    <NavBar query={query}/>
+                    <NavBar query={query} name={name}/>
 
                     <h1>Name: {name}</h1>
                     <p>description: {description}</p>

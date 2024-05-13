@@ -3,14 +3,14 @@ body {
 }
 
 .App {
-  margin: 20px auto;
-  width: 50%;
+  /* margin: 20px auto;
+  width: 50%; */
   background-color: white;
 }
 
 .search-bar {
-  margin: auto;
-  width: 100%;
+  margin: 20px auto;
+  width: 90%;
 }
 
 .search-box {

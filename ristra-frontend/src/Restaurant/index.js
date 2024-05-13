@@ -3,6 +3,14 @@ import { useState, useEffect } from 'react'
 import Review from '../Review'
 import { useParams, useLocation } from "react-router-dom";
 import NavBar from '../NavBar';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardHeader from '@mui/material/CardHeader';
+import Avatar from '@mui/material/Avatar';
+import Typography from '@mui/material/Typography';
+import { red } from '@mui/material/colors';
+import Chip from '@mui/material/Chip';
+import List from '@mui/material/List';
 
 
 function Restaurant() {
@@ -53,22 +61,47 @@ function Restaurant() {
                 <div>
                     <NavBar query={query} name={name}/>
 
-                    <h1>Name: {name}</h1>
-                    <p>description: {description}</p>
-                    <p>rating: {rating}</p>
-                    <p>{params.restaurantId}</p>
+                    <Card>
+                        <CardHeader
+                            sx={{ width: "90%", margin: "auto" }}
+                            avatar={
+                            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                                R
+                            </Avatar>
+                            }
+                            // action={
+                            // <IconButton aria-label="settings">
+                            //     <MoreVertIcon />
+                            // </IconButton>
+                            // }
+                            title={name}
+                            subheader={
+                                <Chip label={`${rating}/5`} />
+                            }
+                        />
+                        <CardContent sx={{ width: "90%", margin: "auto" }}>
+                            <Typography variant="body2" color="text.secondary">
+                                {description}
+                            </Typography>
 
-                    {reviews.map((review, index) => {
-                        return (
-                            <Review 
-                                key={index} 
-                                user={review.user} 
-                                rating={review.rating}
-                                comment={review.comment} 
-                            />
-                        )
-                    })
-                }
+                            <List>
+                                {reviews.map((review, index) => {
+                                    return (
+                                        <Review 
+                                            key={index} 
+                                            user={review.user} 
+                                            rating={review.rating}
+                                            comment={review.comment} 
+                                        />
+                                    )
+                                })
+                                }
+                            </List>
+                        </CardContent>
+                    </Card>
+
+
+                    
             </div>
             ) : null }
 
